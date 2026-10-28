@@ -56,6 +56,9 @@ ownership and use the daemon as the only Git writer.
 
 ## Service environments
 
+Use the [systemd user-service guide](systemd.md) and included unit template for
+a persistent installation with a separate packaged runtime and MCP clients.
+
 A service manager does not necessarily load interactive shell profiles. Use an
 absolute Node.js executable path and an absolute CLI path in the service command,
 particularly when Node.js is installed with a version manager. Supply required

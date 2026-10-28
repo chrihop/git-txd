@@ -27,6 +27,7 @@ Linux. The `fs-ext` kernel-lock binding needs a C/C++ toolchain and Python for
 installation. Windows and network filesystems are unsupported.
 See [Linux setup and validation](docs/linux.md) for native build requirements
 and a production-package smoke test.
+For a persistent Linux daemon, use the [systemd user-service guide](docs/systemd.md).
 
 ```sh
 git clone https://github.com/chrihop/git-txd.git

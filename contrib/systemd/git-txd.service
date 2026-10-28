@@ -1,0 +1,22 @@
+[Unit]
+Description=Shared Git transaction daemon
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/git-txd start --config %h/.config/git-txd/daemon.json
+WorkingDirectory=%h
+Environment="PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin"
+Restart=on-failure
+RestartSec=5s
+TimeoutStopSec=30min
+KillMode=mixed
+UMask=0077
+NoNewPrivileges=true
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=git-txd
+
+[Install]
+WantedBy=default.target
