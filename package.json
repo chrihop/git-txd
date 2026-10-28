@@ -21,9 +21,10 @@
   "scripts": {
     "build": "tsc",
     "test": "vitest run",
+    "test:package": "node scripts/test-package.mjs",
     "check": "tsc --noEmit && tsc -p tsconfig.test.json",
-    "format": "prettier --write src tests docs README.md",
-    "format:check": "prettier --check src tests docs README.md",
+    "format": "prettier --write src tests scripts docs README.md",
+    "format:check": "prettier --check src tests scripts docs README.md",
     "prepack": "npm run build",
     "pretest": "npm run build"
   },

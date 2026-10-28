@@ -25,6 +25,8 @@ The daemon serializes Git writes; it does not resolve concurrent file edits.
 Requires **Node.js 24+**, Git with `--pathspec-from-file` support, and macOS or
 Linux. The `fs-ext` kernel-lock binding needs a C/C++ toolchain and Python for
 installation. Windows and network filesystems are unsupported.
+See [Linux setup and validation](docs/linux.md) for native build requirements
+and a production-package smoke test.
 
 ```sh
 git clone https://github.com/chrihop/git-txd.git
@@ -120,6 +122,7 @@ for configuration, crash behavior and storage limits.
 ```sh
 npm run check
 npm test -- --maxWorkers=1
+npm run test:package
 npm run format:check
 npm pack --dry-run
 ```

@@ -21,4 +21,4 @@ jobs:
       - run: npm run check
       - run: npm run format:check
       - run: npm test -- --maxWorkers=1 --testTimeout=60000 --hookTimeout=60000
-      - run: npm pack --dry-run
+      - run: npm run test:package

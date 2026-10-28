@@ -15,11 +15,19 @@ npm ci
 npm run check
 npm run format:check
 npm test -- --maxWorkers=1 --testTimeout=60000 --hookTimeout=60000
+npm run test:package
 npm pack --dry-run --json
 ```
 
 `npm test` builds first because process tests execute `dist/cli.js`.
 The GitHub Actions matrix runs Node.js 24 and 26 on Linux and macOS.
+
+`npm run test:package` builds a real tarball, installs it with production
+dependencies in a temporary directory, and starts its installed CLI as a separate
+daemon process. It verifies selected-file commits through the CLI, HTTP MCP and
+stdio MCP, identical retries, rejected-push recovery across a graceful restart,
+the original ledger inode and commit SHA, and preservation of unrelated edits.
+It stops its daemon and removes the disposable installation afterward.
 
 To exercise the actual package:
 
