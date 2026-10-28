@@ -1,0 +1,22 @@
+{
+  "repo": "/absolute/project",
+  "branch": "main",
+  "remote": "origin",
+  "port": 8787,
+  "ledgerRetentionDays": 30,
+  "ledgerArchiveBatchSize": 100,
+  "committer": {
+    "name": "Git Transaction Coordinator",
+    "email": "git-txd@localhost.invalid"
+  },
+  "allowedAuthors": [],
+  "maxPending": 100,
+  "maxPendingPerAgent": 100,
+  "slotMs": 45000,
+  "minQueueMs": 45000,
+  "maxQueueMs": 600000,
+  "gitTimeoutMs": 120000,
+  "pushTimeoutMs": 90000,
+  "reconciliationTimeoutMs": 60000,
+  "pushRetries": 2
+}
